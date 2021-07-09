@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+      <title>Text util</title>
+
+  </head>
+
+  <body>
+
+<!--  navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Welcome to Text_utils</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">About Us</a>
+                <a class="nav-link" href="#">Contact us</a>
+            </div>
+        </div>
+        </div>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </nav>
+
+<!--alert message-->
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Welcome To text utils</strong>&nbspYou can do anything with your text here.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+<!--Container-->
+    <div class="container">
+        <form action='/analyze' method='POST'>
+            {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1"  class="form-label">Write your string here.</label>
+            <textarea name="text" class="form-control"  id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+        <div class="form-check form-switch">
+            <input type="checkbox" name="removepunc" class="form-check-input" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuations</label>
+        </div>
+        <div class="form-check form-switch">
+            <input type="checkbox" name="capitalized" class="form-check-input" id="flexSwitchCheckDefault1">
+            <label class="form-check-label" for="flexSwitchCheckDefault1">Uppercase</label>
+        </div>
+        <div class="form-check form-switch">
+            <input type="checkbox" name="newline" class="form-check-input" id= "flexSwitchCheckDefault2">
+            <label class="form-check-label" for="flexSwitchCheckDefault2">New line remove</label>
+        </div>
+        <div class="form-check form-switch">
+            <input  type="checkbox" name="spaceremove" class="form-check-input" id="flexSwitchCheckDefault3">
+            <label class="form-check-label" for="flexSwitchCheckDefault3">Extra space remove</label>
+        </div>
+        <div class="form-check form-switch">
+            <input type="checkbox" name="charcount" class="form-check-input" id="flexSwitchCheckDefault4">
+            <label class="form-check-label" for="flexSwitchCheckDefault4">Counting Character</label>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-dark "> Analyze Text</button>
+        </form>
+    </div>
+
+<!--Javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>
